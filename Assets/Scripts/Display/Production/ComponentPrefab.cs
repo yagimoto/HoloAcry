@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LayerPrefab : MonoBehaviour
+public class ComponentPrefab : MonoBehaviour
 {
     public GameObject component;
 
