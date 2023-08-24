@@ -25,7 +25,6 @@ public class UIController : MonoBehaviour
     {
         PlayUI.SetActive(false);
         ListUI.SetActive(true);
-        Debug.Log("一覧画面");
     }
 
     // 制作画面を表示
@@ -33,7 +32,6 @@ public class UIController : MonoBehaviour
     {
         ListUI.SetActive(false);
         ProductionUI.SetActive(true);
-        Debug.Log("制作画面");
     }
 
     // 設定画面を表示
@@ -49,7 +47,6 @@ public class UIController : MonoBehaviour
         SettingUI.SetActive(false);
         ListUI.SetActive(false);
         PlayUI.SetActive(true);
-        Debug.Log("再生画面");
     }
 
 }
