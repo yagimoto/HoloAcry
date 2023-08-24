@@ -20,7 +20,7 @@ public class ComponentPrefab : MonoBehaviour
 
     public void CreateComponent()
     {
-        Instantiate (component, new Vector3(0, 0, 0), Quaternion.identity, this.transform);
+        Instantiate (component, new Vector3(340, 830, 0), Quaternion.identity, this.transform);
     }
 
 }
