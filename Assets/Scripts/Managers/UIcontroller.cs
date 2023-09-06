@@ -10,16 +10,6 @@ public class UIController : MonoBehaviour
     public GameObject SettingUI;
     public GameObject PlayUI;
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
     // 一覧画面を表示
     public void ShowListUI()
     {

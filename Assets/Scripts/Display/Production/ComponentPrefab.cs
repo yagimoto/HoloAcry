@@ -6,21 +6,16 @@ public class ComponentPrefab : MonoBehaviour
 {
     public GameObject component;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void CreateComponent()
     {
+        // 生成される回数ごとに位置を変化させる必要がある
+        
         Instantiate (component, new Vector3(340, 830, 0), Quaternion.identity, this.transform);
+    }
+
+    public void DestroyComponent()
+    {
+        Destroy(this.gameObject);
     }
 
 }
