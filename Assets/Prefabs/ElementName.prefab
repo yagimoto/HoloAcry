@@ -191,7 +191,7 @@ MonoBehaviour:
   m_text: "\u76F4\u65B9\u4F531"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2860a3aed30b75a46851b8b49e388498, type: 2}
-  m_sharedMaterial: {fileID: -4354709121572512263, guid: 2860a3aed30b75a46851b8b49e388498, type: 2}
+  m_sharedMaterial: {fileID: -9223138412489157848, guid: 2860a3aed30b75a46851b8b49e388498, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
