@@ -12,7 +12,7 @@ public class CreateElementButton : MonoBehaviour
     public void CreateElement()
     {
         // Elementを生成
-        GameObject NewElement = Instantiate(ElementPrefab);
+        GameObject NewElement = Instantiate(ElementPrefab, GameManager.CurrentWork.transform);
         GameObject NewElementName = Instantiate(ElementNamePrefab, ElementNameList.transform);
 
         // ゲームオブジェクト名の変更

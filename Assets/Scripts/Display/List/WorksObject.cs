@@ -5,6 +5,6 @@ public class WorksObject : MonoBehaviour
     public GameObject WorkSpace;
     public void CreateWork()
     {
-        Instantiate(WorkSpace, this.transform);
+        GameManager.CurrentWork = Instantiate(WorkSpace, this.transform);
     }
 }
