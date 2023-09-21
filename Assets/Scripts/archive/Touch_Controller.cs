@@ -49,6 +49,4 @@ public class Touch_Controller : MonoBehaviour
         }
 
     }
-    
-    public void changeMode()
 }
