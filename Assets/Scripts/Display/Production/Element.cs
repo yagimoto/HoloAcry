@@ -22,8 +22,6 @@ public class Element : MonoBehaviour
         NewElement.transform.name = i.ToString();
         ElementName name = NewElementName.GetComponent<ElementName>();
 
-        Debug.Log("Elementの名前 " + NewElement.transform.name);
-
         name.ChangeElementName(i.ToString());
 
         i++;
