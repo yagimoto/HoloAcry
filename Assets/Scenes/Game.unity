@@ -6818,7 +6818,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1897728999}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Element, Assembly-CSharp
         m_MethodName: DestroyElementName
         m_Mode: 1
@@ -10858,7 +10858,6 @@ GameObject:
   - component: {fileID: 1897729002}
   - component: {fileID: 1897729001}
   - component: {fileID: 1897729000}
-  - component: {fileID: 1897728999}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -10866,22 +10865,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1897728999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1897728998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e02e633be294f24db7640c776742c90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ElementPrefab: {fileID: 4424407031298781816, guid: 0cd603db076d1364d9ebc7106561ad21, type: 3}
-  ElementName: {fileID: 4427008920244591950, guid: 3afb7081d06fec74dbfb997a61470c5f, type: 3}
-  prefabToDelete: {fileID: 0}
-  i: 0
 --- !u!114 &1897729000
 MonoBehaviour:
   m_ObjectHideFlags: 0
