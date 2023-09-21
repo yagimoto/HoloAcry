@@ -10,7 +10,9 @@ public class GameManager : MonoBehaviour
 
     public static GameObject selectedGameObject;
 
-    
+    public static GameObject CurrentWork;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,14 +50,13 @@ public class GameManager : MonoBehaviour
             switch (CurrentMode)
             {
                 case Mode.ChangeColor:
-                    BaseProduction.ChangeColor(selectedGameObject, new Color32(187, 211, 211,1 ));
+                    //BaseProduction.ChangeColor(selectedGameObject, new Color32(187, 211, 211,1 ));
                     break;
             }
         }
         
-        BaseProduction.ChangePos(selectedGameObject);
-        BaseProduction.ChangeScale(selectedGameObject);
-        BaseProduction.ChangeMesh(selectedGameObject);
+        //BaseProduction.ChangePos(selectedGameObject);
+        //BaseProduction.ChangeScale(selectedGameObject);
         //Debug.Log(CurrentMode);
     }
 }
