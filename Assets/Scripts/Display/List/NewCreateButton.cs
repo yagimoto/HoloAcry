@@ -7,7 +7,7 @@ public class WorksObject : MonoBehaviour
     private float y = 125;
     public void CreateWork()
     {
-        GameObject NewWork = Instantiate(WorkSpace, this.transform);
+        GameObject NewWork = Instantiate(WorkSpace);
 
         x = ( this.transform.childCount % 2 ) == 0 ? 125.0f : 0.0f;
         y = ( this.transform.childCount % 2 ) == 0 ? y : y - 125.0f;
