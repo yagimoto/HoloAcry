@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static Mode CurrentMode = Mode.ChangeColor;
 
     public static GameObject selectedGameObject;
+    public static GameObject CurrentWork;
 
     
     // Start is called before the first frame update
