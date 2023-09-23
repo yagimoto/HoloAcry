@@ -4,45 +4,51 @@ using UnityEngine;
 
 public class SaveController : MonoBehaviour
 {
+    // 作品をセーブする関数
     public void SaveElements()
     {
-        Work WorkData = new Work(); // 一つの作品のデータを格納するクラス
+        // データを格納するクラスをインスタンス化
+        Work WorkData = new Work();
 
-        // 作品内のすべてのオブジェクトを格納
+        // 作品内のすべてのElementのデータをWorkDataに格納
         StoreElementData(GlobalVariables.CurrentWork, WorkData);
 
+        // ログに出力
         Debug.Log(JsonUtility.ToJson(WorkData));
     }
 
-    // 格納したいWork、格納先を引数として作品内のすべてのオブジェクトを格納する関数
-    private void StoreElementData(GameObject WorkToSave, Work WorkData)
+    // 格納したい作品、格納先を引数として作品内のすべてのオブジェクトを格納する関数
+    private void StoreElementData(GameObject CurrentWork, Work WorkData)
     {
         // 作品名を格納
-        WorkData.work_name = WorkToSave.transform.name;
+        WorkData.work_name = CurrentWork.transform.name;
 
         // WorkDataクラス内のelementsを初期化
         WorkData.elements = new List<Element>();
         
         // 作品内のすべてのオブジェクトのデータを格納
-        foreach (Transform child in WorkToSave.transform)
+        foreach (Transform child in CurrentWork.transform)
         {
-            GameObject childObject = child.gameObject;
-            Debug.Log("Elementの名前 " + childObject.transform.name);
+            GameObject element = child.gameObject;
+            Debug.Log("Elementの名前 " + element.transform.name);
 
-            Color ElementColor = childObject.GetComponent<Renderer>().material.color;
+            // Elementの色の情報を取得
+            Color ElementColor = element.GetComponent<Renderer>().material.color;
 
+            // Elementのデータを格納
             Element elementData = new Element
             {
-                name = childObject.transform.name,
-                scale = childObject.transform.localScale,
-                position = childObject.transform.localPosition,
-                color_R = ElementColor.r,
-                color_G = ElementColor.g,
-                color_B = ElementColor.b,
-                color_A = ElementColor.a,
-                rotate = childObject.transform.localEulerAngles
+                name     = element.transform.name,
+                scale    = element.transform.localScale,
+                position = element.transform.localPosition,
+                color_R  = ElementColor.r,
+                color_G  = ElementColor.g,
+                color_B  = ElementColor.b,
+                color_A  = ElementColor.a,
+                rotate   = element.transform.localEulerAngles
             };
-
+            
+            // Elementのデータが入ったelementDataをWorkDataに格納
             WorkData.elements.Add(elementData);
         }
     }
