@@ -15,6 +15,6 @@ public class WorksObject : MonoBehaviour
         NewWork.transform.localPosition = new Vector3(x , y, 0.0f);
         NewWork.transform.name = "Work" + this.transform.childCount.ToString();
 
-        GameManager.CurrentWork = NewWork;
+        GlobalVariables.CurrentWork = NewWork;
     }
 }
