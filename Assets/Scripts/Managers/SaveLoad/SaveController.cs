@@ -14,22 +14,8 @@ public class SaveController : MonoBehaviour
         // 作品内のすべてのElementのデータをWorkDataに格納
         StoreElementData(GlobalVariables.CurrentWork, WorkData);
         
-        // WorkDataをJson文字列に変換
-        string InsertData = JsonUtility.ToJson(WorkData);
-
-        // すでに保存されているデータを取得
-        string OriginalFileData = File.ReadAllText(GlobalVariables.SaveFilePath);
-
-        // WorkDataのインサート位置を定義
-        int position = OriginalFileData.Length - 2;
-
-        // WorkDataをインサートする
-        string NewFileData = OriginalFileData.Substring(0, position) + InsertData + OriginalFileData.Substring(position);
-
         // ファイルへの書き込み
-        File.WriteAllText(GlobalVariables.SaveFilePath, NewFileData);
-
-        Debug.Log("書き込んだよ");
+        InsertNewSaveData(WorkData);
     }
 
     // 格納したい作品、格納先を引数として作品内のすべてのオブジェクトを格納する関数
@@ -66,5 +52,29 @@ public class SaveController : MonoBehaviour
             // Elementのデータが入ったelementDataをWorkDataに格納
             WorkData.elements.Add(elementData);
         }
+    }
+    // ファイルに書き込みをする関数
+    private void InsertNewSaveData(Work WorkData)
+    {
+        // すでに保存されているデータを取得
+        string OriginalFileData = File.ReadAllText(GlobalVariables.SaveFilePath);
+
+        // セーブファイルになにも書かれていなかったら下のように書き込む
+        if (OriginalFileData == "")
+        {
+            File.WriteAllText(SaveFilePath, "{\"Works\":[]}");
+        }
+        // WorkDataをJson文字列に変換
+        string InsertData = JsonUtility.ToJson(WorkData);
+        InsertedData = OriginalFileData.Length > 12 ? "," + InsertData : InsertData;
+
+        // WorkDataのインサート位置を定義
+        int position = OriginalFileData.Length - 2;
+
+        // WorkDataをインサートした文字列の生成
+        string NewFileData = OriginalFileData.Substring(0, position) + InsertData + OriginalFileData.Substring(position);
+
+        // ファイルへの書き込み
+        File.WriteAllText(GlobalVariables.SaveFilePath, NewFileData);
     }
 }
