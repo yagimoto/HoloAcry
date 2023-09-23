@@ -10,14 +10,12 @@ public class GlobalVariables : MonoBehaviour
     {
         SaveFilePath = Application.persistentDataPath + "/SaveFile.json";
 
-        if (File.Exists(SaveFilePath))
+        if (!File.Exists(filePath) || string.IsNullOrEmpty(File.ReadAllText(filePath)))
         {
-            Debug.Log("セーブファイルあるよ");
+            File.WriteAllText(filePath, "{\"works\":[]}");
         }
-        else
-        {
-            Debug.Log("なかったからつくるね");
-            File.WriteAllText(SaveFilePath, "{\"Works\":[]}");
-        }
+        
+        LoadController test = new LoadController();
+        test.LoadWorks();
     }
 }

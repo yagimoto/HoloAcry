@@ -62,11 +62,11 @@ public class SaveController : MonoBehaviour
         // セーブファイルになにも書かれていなかったら下のように書き込む
         if (OriginalFileData == "")
         {
-            File.WriteAllText(SaveFilePath, "{\"Works\":[]}");
+            File.WriteAllText(GlobalVariables.SaveFilePath, "{\"works\":[]}");
         }
         // WorkDataをJson文字列に変換
         string InsertData = JsonUtility.ToJson(WorkData);
-        InsertedData = OriginalFileData.Length > 12 ? "," + InsertData : InsertData;
+        InsertData = OriginalFileData.Length > 12 ? "," + InsertData : InsertData;
 
         // WorkDataのインサート位置を定義
         int position = OriginalFileData.Length - 2;
