@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class SaveController : MonoBehaviour
 {
@@ -12,9 +13,23 @@ public class SaveController : MonoBehaviour
 
         // 作品内のすべてのElementのデータをWorkDataに格納
         StoreElementData(GlobalVariables.CurrentWork, WorkData);
+        
+        // WorkDataをJson文字列に変換
+        string InsertData = JsonUtility.ToJson(WorkData);
 
-        // ログに出力
-        Debug.Log(JsonUtility.ToJson(WorkData));
+        // すでに保存されているデータを取得
+        string OriginalFileData = File.ReadAllText(GlobalVariables.SaveFilePath);
+
+        // WorkDataのインサート位置を定義
+        int position = OriginalFileData.Length - 2;
+
+        // WorkDataをインサートする
+        string NewFileData = OriginalFileData.Substring(0, position) + InsertData + OriginalFileData.Substring(position);
+
+        // ファイルへの書き込み
+        File.WriteAllText(GlobalVariables.SaveFilePath, NewFileData);
+
+        Debug.Log("書き込んだよ");
     }
 
     // 格納したい作品、格納先を引数として作品内のすべてのオブジェクトを格納する関数
