@@ -5,17 +5,17 @@ public class GlobalVariables : MonoBehaviour
 {
     public static GameObject CurrentWork;
     public static string SaveFilePath;
+    public LoadController loadController;
 
     private void Awake()
     {
         SaveFilePath = Application.persistentDataPath + "/SaveFile.json";
 
-        if (!File.Exists(filePath) || string.IsNullOrEmpty(File.ReadAllText(filePath)))
+        if (!File.Exists(SaveFilePath) || string.IsNullOrEmpty(File.ReadAllText(SaveFilePath)))
         {
-            File.WriteAllText(filePath, "{\"works\":[]}");
+            File.WriteAllText(SaveFilePath, "{\"works\":[]}");
         }
         
-        LoadController test = new LoadController();
-        test.LoadWorks();
+        loadController.LoadWorks();
     }
 }

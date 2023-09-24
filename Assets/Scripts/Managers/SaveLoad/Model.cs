@@ -10,6 +10,9 @@ public class Element
     // Elementの名前を格納
     public string name;
 
+    // Elementの種類を格納
+    public string elementType;
+
     // ElementのlocalScaleを格納
     public Vector3 scale;
 
@@ -20,7 +23,7 @@ public class Element
     public Vector3 rotate;
 
     // Elementのmeshの頂点座標を格納
-    public List<Vector3> meshVertices;
+    public Vector3[] meshVertices;
 
     // Elementの色のR値を格納
     public float color_R;

@@ -34,25 +34,28 @@ public class SaveController : MonoBehaviour
             Debug.Log("Elementの名前 " + element.transform.name);
 
             // Elementの色の情報を取得
-            Color ElementColor = element.GetComponent<Renderer>().material.color;
+            Color elementColor = element.GetComponent<Renderer>().material.color;
+            MeshFilter elementMeshFilter = element.GetComponent<MeshFilter>();
 
             // Elementのデータを格納
             Element elementData = new Element
             {
-                name     = element.transform.name,
-                scale    = element.transform.localScale,
-                position = element.transform.localPosition,
-                color_R  = ElementColor.r,
-                color_G  = ElementColor.g,
-                color_B  = ElementColor.b,
-                color_A  = ElementColor.a,
-                rotate   = element.transform.localEulerAngles
+                name         = element.transform.name,
+                scale        = element.transform.localScale,
+                position     = element.transform.localPosition,
+                rotate       = element.transform.localEulerAngles,
+                meshVertices = elementMeshFilter.mesh.vertices,
+                color_R      = elementColor.r,
+                color_G      = elementColor.g,
+                color_B      = elementColor.b,
+                color_A      = elementColor.a
             };
             
             // Elementのデータが入ったelementDataをWorkDataに格納
             WorkData.elements.Add(elementData);
         }
     }
+    
     // ファイルに書き込みをする関数
     private void InsertNewSaveData(Work WorkData)
     {
