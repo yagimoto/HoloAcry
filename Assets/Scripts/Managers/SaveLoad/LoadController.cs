@@ -59,9 +59,11 @@ public class LoadController : MonoBehaviour
 
             if(Instance != null)
             {
+                // 必要なコンポーネントの取得
                 Color InstanceColor           = Instance.GetComponent<Renderer>().material.color;
                 MeshFilter InstanceMeshFilter = Instance.GetComponent<MeshFilter>();
-
+                
+                // 各種値を設定
                 Instance.transform.name             = element.name;
                 Instance.transform.localScale       = element.scale;
                 Instance.transform.localPosition    = element.position;
