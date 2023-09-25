@@ -13,6 +13,7 @@ public class SaveController : MonoBehaviour
 
         // 作品内のすべてのElementのデータをWorkDataに格納
         StoreElementData(GlobalVariables.CurrentWork, WorkData);
+        Debug.Log("格納したよ");
         
         // ファイルへの書き込み
         InsertNewSaveData(WorkData);
@@ -41,6 +42,7 @@ public class SaveController : MonoBehaviour
             Element elementData = new Element
             {
                 name         = element.transform.name,
+                elementType  = element.tag,
                 scale        = element.transform.localScale,
                 position     = element.transform.localPosition,
                 rotate       = element.transform.localEulerAngles,
@@ -55,7 +57,7 @@ public class SaveController : MonoBehaviour
             WorkData.elements.Add(elementData);
         }
     }
-    
+
     // ファイルに書き込みをする関数
     private void InsertNewSaveData(Work WorkData)
     {
