@@ -4416,8 +4416,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1573144832}
-  - {fileID: 1564992366}
   - {fileID: 844639007}
+  - {fileID: 1564992366}
   - {fileID: 2096096109}
   - {fileID: 989711439}
   m_Father: {fileID: 1288730428}
@@ -7285,7 +7285,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1240385724}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c63d2f150572af4ab71db99d4a7222a, type: 3}
+  m_Script: {fileID: 11500000, guid: 69850ed87cfc35347a5c66e63bb09d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   WorkSpace: {fileID: 935481881605146780, guid: 041e9aa81f9ac8b4fb8d4358ab0a72b5, type: 3}

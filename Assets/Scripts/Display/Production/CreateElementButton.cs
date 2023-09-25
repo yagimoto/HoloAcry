@@ -16,12 +16,12 @@ public class CreateElementButton : MonoBehaviour
         GameObject NewElementName = Instantiate(ElementNamePrefab, ElementNameList.transform);
 
         // ゲームオブジェクト名の変更
-        NewElementName.transform.name = i.ToString();
-        NewElement.transform.name = i.ToString();
+        NewElementName.transform.name = NewElement.tag + i.ToString();
+        NewElement.transform.name = NewElement.tag + i.ToString();
 
         // 表示名の変更
         ElementNamePrefab name = NewElementName.GetComponent<ElementNamePrefab>();
-        name.ChangeElementNameText(i.ToString());
+        name.ChangeElementNameText(NewElement.tag + i.ToString());
 
         i++;
     }
