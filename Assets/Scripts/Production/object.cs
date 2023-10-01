@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Box : MonoBehaviour, IPointerClickHandler
+public class @object : MonoBehaviour, IPointerClickHandler
 {
+
+    public MeshRenderer mesh;
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -19,8 +20,13 @@ public class Box : MonoBehaviour, IPointerClickHandler
     
     public void OnPointerClick(PointerEventData eventData)
     {
-        GameManager.selectedGameObject = gameObject;
-        Debug.Log("クリックされたにゃー");
+        ProductionManager.selectedGameObjects.Add(gameObject);
+        Debug.Log("クリック");
+    }
+
+    void SetMatColor(MeshRenderer mesh,Color col )
+    {
+        mesh.material.color = col; //meshのmaterialの色を変える
     }
 
 }

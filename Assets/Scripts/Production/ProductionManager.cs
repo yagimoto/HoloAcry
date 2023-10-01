@@ -8,7 +8,7 @@ public class ProductionManager : MonoBehaviour
 {
     public static Mode CurrentMode = Mode.ChangeColor;
 
-    public static GameObject selectedGameObject;
+    public static List<GameObject> selectedGameObjects = new List<GameObject>();
 
     public static GameObject CurrentWork;
 
@@ -64,7 +64,7 @@ public class ProductionManager : MonoBehaviour
                     break;
             }
         }
-        
+        ProductionFunction.ChangeColor(selectedGameObject, new Color32(0, 0, 0, 1));
         //BaseProduction.ChangePos(selectedGameObject);
         //BaseProduction.ChangeScale(selectedGameObject);
         //Debug.Log(CurrentMode);

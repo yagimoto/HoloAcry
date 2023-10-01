@@ -48,7 +48,9 @@ namespace DefaultNamespace
 
         public static void ChangeColor(GameObject gameObject, Color32 color)
         {
-            gameObject.GetComponent<Renderer>().material.color = color;
+            MeshRenderer mesh;
+            mesh = gameObject.GetComponent<MeshRenderer>();
+            mesh.material.color = Color.red;
         }
 
         public static void MergeObjects(GameObject[] gameObjects)
