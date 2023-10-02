@@ -11,8 +11,7 @@ public class ProductionManager : MonoBehaviour
     public static List<GameObject> selectedGameObjects = new List<GameObject>();
 
     public static GameObject CurrentWork;
-
-
+    
     // Start is called before the first frame update
     void Start()
     {
