@@ -23,7 +23,7 @@ public class ProductionManager : MonoBehaviour
     void Update()
     {
         
-        if (selectedGameObject == null)
+        if (selectedGameObjects == null)
         {
             switch (Input.touchCount)
             {
@@ -46,25 +46,7 @@ public class ProductionManager : MonoBehaviour
                     //BaseProduction.ChangeScale(selectedGameObject);
                     break;
             }
-            
-            switch (CurrentMode)
-            {
-                case Mode.ChangeScale:
-                    break;
-                case Mode.ChangePos:
-                    break;
-                case Mode.ChangeColor:
-                    ProductionFunction.ChangeColor(selectedGameObject, new Color32(187, 211, 211,1 ));
-                    break;
-                case Mode.MergeObjects:
-                    break;
-                case Mode.ChangeSlope:
-                    break;
-                case Mode.ChangeRotation:
-                    break;
-            }
         }
-        ProductionFunction.ChangeColor(selectedGameObject, new Color32(0, 0, 0, 1));
         //BaseProduction.ChangePos(selectedGameObject);
         //BaseProduction.ChangeScale(selectedGameObject);
         //Debug.Log(CurrentMode);

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace DefaultNamespace
 {
@@ -46,11 +47,11 @@ namespace DefaultNamespace
 
         }
 
-        public static void ChangeColor(GameObject gameObject, Color32 color)
+        public static void ChangeColor(List<GameObject> gameObjects, Color32 color)
         {
             MeshRenderer mesh;
-            mesh = gameObject.GetComponent<MeshRenderer>();
-            mesh.material.color = Color.red;
+            mesh = gameObjects[0].GetComponent<MeshRenderer>();
+            mesh.material.color = color;
         }
 
         public static void MergeObjects(GameObject[] gameObjects)
@@ -81,9 +82,14 @@ namespace DefaultNamespace
             mesh.vertices = vertices;
         }
 
-        public static void ChangeRotation(GameObject gameObject)
+        public static void ChangeRotation(GameObject gameObject, float x, float y, float z)
         {
-            
+            gameObject.transform.rotation = Quaternion.Euler(x, y, z);
+        }
+
+        public static void ApplyBooleanOp(List<GameObject> gameObjects)
+        {
+            gameObjects[0].AddComponent<ChangePOV>();
         }
     }
 

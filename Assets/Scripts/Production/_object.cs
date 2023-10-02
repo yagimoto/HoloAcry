@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class @object : MonoBehaviour, IPointerClickHandler
+public class _object : MonoBehaviour, IPointerClickHandler
 {
 
     public MeshRenderer mesh;
@@ -21,12 +22,8 @@ public class @object : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         ProductionManager.selectedGameObjects.Add(gameObject);
+        ProductionFunction.ChangeSlope(ProductionManager.selectedGameObjects[0]);
         Debug.Log("クリック");
     }
-
-    void SetMatColor(MeshRenderer mesh,Color col )
-    {
-        mesh.material.color = col; //meshのmaterialの色を変える
-    }
-
+    
 }

@@ -19,7 +19,6 @@ public class Button : MonoBehaviour
 
     public void ModeChange(Mode mode)
     {
-        GameManager.CurrentMode = mode;
     }
     
 }
